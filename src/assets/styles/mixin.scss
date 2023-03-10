@@ -1,0 +1,49 @@
+@mixin pd($pd_value: 3%) {
+    padding-left: $pd_value;
+    padding-right: $pd_value;
+}
+
+
+@mixin boxCenter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+
+
+@mixin responsive ($breakpoint) {
+    @if $breakpoint == phone {
+        @media (max-width: 600px) {
+            @content
+        };
+    }
+
+    @if $breakpoint == phones {
+        @media (min-width: 500px) and (max-width: 600px) {
+            @content
+        };
+    }
+
+    @if $breakpoint == tablet-min {
+        @media (min-width: 600px) and (max-width: 900px) {
+            @content
+        };
+    }
+
+    @if $breakpoint == tablet-mini {
+        @media (min-width: 600px) and (max-width: 750px) {
+            @content
+        };
+    }
+
+    @if $breakpoint == tablet {
+        @media (min-width: 900px) and (max-width: 1200px) {
+            @content
+        };
+    }
+    @if $breakpoint == min-destop { 
+        @media (min-width: 1200px) and (max-width: 1300px) {
+            @content
+        };
+    }
+}
